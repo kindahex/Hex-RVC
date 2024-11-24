@@ -200,4 +200,4 @@ The use of the converted voice for the following purposes is prohibited.
 
 ## Disclaimer
 
-I am not liable for any direct, indirect, consequential, incidental, or special damages arising out of or in any way connected with the use/misuse or inability to use this software.
+we not liable for any direct, indirect, consequential, incidental, or special damages arising out of or in any way connected with the use/misuse or inability to use this software.
