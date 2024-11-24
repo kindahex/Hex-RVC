@@ -44,9 +44,9 @@ class Config:
                         strr = f.read().replace("true", "false")
                     with open(BASE_DIR / "src" / "configs" / config_file, "w") as f:
                         f.write(strr)
-                with open(BASE_DIR / "src" / "trainset_preprocess_pipeline_print.py", "r") as f:
+                with open(BASE_DIR / "src" / "pipeline_print.py", "r") as f:
                     strr = f.read().replace("3.7", "3.0")
-                with open(BASE_DIR / "src" / "trainset_preprocess_pipeline_print.py", "w") as f:
+                with open(BASE_DIR / "src" / "pipeline_print.py", "w") as f:
                     f.write(strr)
             else:
                 self.gpu_name = None
@@ -58,9 +58,9 @@ class Config:
                 + 0.4
             )
             if self.gpu_mem <= 4:
-                with open(BASE_DIR / "src" / "trainset_preprocess_pipeline_print.py", "r") as f:
+                with open(BASE_DIR / "src" / "pipeline_print.py", "r") as f:
                     strr = f.read().replace("3.7", "3.0")
-                with open(BASE_DIR / "src" / "trainset_preprocess_pipeline_print.py", "w") as f:
+                with open(BASE_DIR / "src" / "pipeline_print.py", "w") as f:
                     f.write(strr)
         elif torch.backends.mps.is_available():
             print("No supported N-card found, use MPS for inference")
