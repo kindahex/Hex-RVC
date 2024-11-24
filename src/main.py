@@ -283,7 +283,7 @@ def song_cover_pipeline(song_input, voice_model, pitch_change, keep_files,
                 orig_song_path, instrumentals_path, main_vocals_dereverb_path, backup_vocals_path = paths
 
         # pitch_change = pitch_change + pitch_change_all
-        ai_vocals_path = os.path.join(song_dir, rvc_output, f'{os.path.splitext(os.path.basename(orig_song_path))[0]}.wav')
+        ai_vocals_path = os.path.join(song_dir, 'rvc_output', f'{os.path.splitext(os.path.basename(orig_song_path))[0]}.wav')
         ai_cover_path = os.path.join(song_dir, f'{os.path.splitext(os.path.basename(orig_song_path))[0]} ({voice_model} Ver).{output_format}')
 
         if not os.path.exists(ai_vocals_path):
