@@ -1,16 +1,12 @@
-# AICoverGen
+# HEX RVC (LITE)
 An autonomous pipeline to create covers with any RVC v2 trained AI voice from YouTube videos or a local audio file. For developers who may want to add a singing functionality into their AI assistant/chatbot/vtuber, or for people who want to hear their favourite characters sing their favourite song.
 
-Showcase: https://www.youtube.com/watch?v=2qZuE4WM7CM
 
-Setup Guide: https://www.youtube.com/watch?v=pdlhk4vVHQk
-
-![](images/webui_generate.png?raw=true)
 
 WebUI is under constant development and testing, but you can try it out right now on both local and colab!
 
 ## Changelog
-
+- new f0 method
 - WebUI for easier conversions and downloading of voice models
 - Support for cover generations from a local audio file
 - Option to keep intermediate files generated. e.g. Isolated vocals/instrumentals
@@ -28,9 +24,9 @@ WebUI is under constant development and testing, but you can try it out right no
 - Pitch change for vocals and instrumentals together. Same effect as changing key of song in Karaoke.
 - Audio output format option: wav or mp3.
 
-## Update AICoverGen to latest version
+## Update Hex-RVC to latest version
 
-Install and pull any new requirements and changes by opening a command line window in the `AICoverGen` directory and running the following commands.
+Install and pull any new requirements and changes by opening a command line window in the `Hex-RVC` directory and running the following commands.
 
 ```
 pip install -r requirements.txt
@@ -46,10 +42,7 @@ For those without a powerful enough NVIDIA GPU, you may try AICoverGen out using
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hinabl/AICoverGen-Colab/blob/main/Hina_Mod_AICoverGen_colab.ipynb)
 
-For those who face issues with Google Colab notebook disconnecting after a few minutes, here's an alternative that doesn't use the WebUI.
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ardha27/AICoverGen-NoUI-Colab/blob/main/CoverGen_No_UI.ipynb)
-
+For those who face issues with Google Colab 
 For those who want to run this locally, follow the setup guide below.
 
 ## Setup
@@ -71,8 +64,8 @@ Follow the instructions [here](https://www.tutorialexample.com/a-step-guide-to-i
 Open a command line window and run these commands to clone this entire repository and install the additional dependencies required.
 
 ```
-git clone https://github.com/SociallyIneptWeeb/AICoverGen
-cd AICoverGen
+git clone https://github.com/kindahex/Hex-RVC
+cd Hex-RVC
 pip install -r requirements.txt
 ```
 
