@@ -6,7 +6,6 @@ RVC_DOWNLOAD_LINK = 'https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 mdxnet_models_dir = BASE_DIR / 'mdxnet_models'
-rvc_models_dir = BASE_DIR / 'rvc_models'
 
 
 def dl_model(link, model_name, dir_name):
@@ -23,9 +22,4 @@ if __name__ == '__main__':
         print(f'Downloading {model}...')
         dl_model(MDX_DOWNLOAD_LINK, model, mdxnet_models_dir)
 
-    rvc_model_names = ['hubert_base.pt', 'rmvpe.pt']
-    for model in rvc_model_names:
-        print(f'Downloading {model}...')
-        dl_model(RVC_DOWNLOAD_LINK, model, rvc_models_dir)
-
-    print('All models downloaded!')
+    print('MDX models downloaded!')
