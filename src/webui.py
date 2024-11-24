@@ -154,13 +154,6 @@ def show_hop_slider(pitch_detection_algo):
         return gr.update(visible=False)
 
 
-if __name__ == '__main__':
-    parser = ArgumentParser(description='Generate a AI cover song in the song_output/id directory.', add_help=True)
-    parser.add_argument("--share", action="store_true", dest="share_enabled", default=False, help="Enable sharing")
-    parser.add_argument("--listen", action="store_true", default=False, help="Make the WebUI reachable from your local network.")
-    parser.add_argument('--listen-host', type=str, help='The hostname that the server will use.')
-    parser.add_argument('--listen-port', type=int, help='The listening port that the server will use.')
-    args = parser.parse_args()
 
     voice_models = get_current_models(rvc_models_dir)
     with open(os.path.join(rvc_models_dir, 'public_models.json'), encoding='utf8') as infile:
@@ -282,6 +275,7 @@ if __name__ == '__main__':
                 model_upload_button.click(upload_local_model, inputs=[zip_file, local_model_name], outputs=local_upload_output_message)
 
     app.launch(
-        share=args.share_enabled,
+        share=True,
+        debug=True,
         server_port=9999,
     )
