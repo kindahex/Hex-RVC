@@ -98,7 +98,6 @@ Once the following output message `Running on local URL:  http://127.0.0.1:7860`
 
 ### Download RVC models via WebUI
 
-![](images/webui_dl_model.png?raw=true)
 
 Navigate to the `Download model` tab, and paste the download link to the RVC model and give it a unique name.
 You may search the [AI Hub Discord](https://discord.gg/aihub) where already trained voice models are available for download. You may refer to the examples for how the download link should look like.
@@ -108,7 +107,6 @@ Once the 2 input fields are filled in, simply click `Download`! Once the output 
 
 ### Upload RVC models via WebUI
 
-![](images/webui_upload_model.png?raw=true)
 
 For people who have trained RVC v2 models locally and would like to use them for AI Cover generations.
 Navigate to the `Upload model` tab, and follow the instructions.
@@ -117,7 +115,6 @@ Once the output message says `[NAME] Model successfully uploaded!`, you should b
 
 ### Running the pipeline via WebUI
 
-![](images/webui_generate.png?raw=true)
 
 - From the Voice Models dropdown menu, select the voice model to use. Click `Update` if you added the files manually to the [rvc_models](rvc_models) directory to refresh the list.
 - In the song input field, copy and paste the link to any song on YouTube or the full path to a local audio file.
