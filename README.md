@@ -41,9 +41,9 @@ Then follow the instructions in the notebook to run the webui.
 
 ## Colab notebook
 
-For those without a powerful enough NVIDIA GPU, you may try AICoverGen out using Google Colab.
+For those without a powerful enough NVIDIA GPU, you may try Hex RVC out using Google Colab.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hinabl/AICoverGen-Colab/blob/main/Hina_Mod_AICoverGen_colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kindahex/Hex-RVC/blob/main/notebook/HexRVC_colab.ipynb)
 
 ---
 
