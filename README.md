@@ -33,6 +33,9 @@ pip install -r requirements.txt
 git pull
 ```
 
+
+---
+
 For colab users, simply click `Runtime` in the top navigation bar of the colab notebook and `Disconnect and delete runtime` in the dropdown menu. 
 Then follow the instructions in the notebook to run the webui.
 
@@ -42,7 +45,8 @@ For those without a powerful enough NVIDIA GPU, you may try AICoverGen out using
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hinabl/AICoverGen-Colab/blob/main/Hina_Mod_AICoverGen_colab.ipynb)
 
-For those who face issues with Google Colab 
+---
+
 For those who want to run this locally, follow the setup guide below.
 
 ## Setup
