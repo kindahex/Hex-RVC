@@ -166,26 +166,25 @@ if __name__ == '__main__':
     with open(os.path.join(rvc_models_dir, 'public_models.json'), encoding='utf8') as infile:
         public_models = json.load(infile)
 
-    with gr.Blocks(title='Hex-RVC') as app:
+    with gr.Blocks(title='Hex-RVC LITE') as app:
 
-        gr.Label('Hex RVC WebUI', show_label=False)
+        gr.Label('Hex RVC LITE', show_label=False)
 
-        # main tab
+        rvc_model = gr.Dropdown(voice_models, label='Voice Models', info='Models folder "Hex-RVC --> rvc_models". After new models are added into this folder, click the refresh button')
+        ref_btn = gr.Button('Refresh Models', variant='primary')
+
         with gr.Tab("Generate"):
 
             with gr.Accordion('Main Options'):
                 with gr.Row():
-                    with gr.Column():
-                        rvc_model = gr.Dropdown(voice_models, label='Voice Models', info='Models folder "AICoverGen --> rvc_models". After new models are added into this folder, click the refresh button')
-                        ref_btn = gr.Button('Refresh Models 🔁', variant='primary')
-
+                    
                     with gr.Column() as yt_link_col:
                         song_input = gr.Text(label='Song input', info='Link to a song on YouTube or full path to a local file. For file upload, click the button below.')
                         show_file_upload_button = gr.Button('Upload file instead')
 
                     with gr.Column(visible=False) as file_upload_col:
                         local_file = gr.File(label='Audio file')
-                        song_input_file = gr.UploadButton('Upload 📂', file_types=['audio'], variant='primary')
+                        song_input_file = gr.UploadButton('Upload', file_types=['audio'], variant='primary')
                         show_yt_link_button = gr.Button('Paste YouTube link/Path to local file instead')
                         song_input_file.upload(process_file_upload, inputs=[song_input_file], outputs=[local_file, song_input])
 
@@ -244,16 +243,14 @@ if __name__ == '__main__':
 
         # Download tab
         with gr.Tab('Download model'):
+            model_zip_link = gr.Text(label='Download link to model', info='Should be a zip file containing a .pth model file and an optional .index file.')
+            model_name = gr.Text(label='Name your model', info='Give your new model a unique name from your other voice models.')
 
-            with gr.Tab('From HuggingFace/Pixeldrain URL'):
-                with gr.Row():
-                    model_zip_link = gr.Text(label='Download link to model', info='Should be a zip file containing a .pth model file and an optional .index file.')
-                    model_name = gr.Text(label='Name your model', info='Give your new model a unique name from your other voice models.')
+            with gr.Row():
+                dl_output_message = gr.Text(label='Output Message', interactive=False, scale=20)
 
-                with gr.Row():
-                    download_btn = gr.Button('Download 🌐', variant='primary', scale=19)
-                    dl_output_message = gr.Text(label='Output Message', interactive=False, scale=20)
-
+                download_btn = gr.Button('Download', variant='primary', scale=19)
+                
                 download_btn.click(download_online_model, inputs=[model_zip_link, model_name], outputs=dl_output_message)
 
                 gr.Markdown('## Input Examples')
@@ -268,33 +265,7 @@ if __name__ == '__main__':
                     download_online_model,
                 )
 
-            with gr.Tab('From Public Index'):
-
-                gr.Markdown('## How to use')
-                gr.Markdown('- Click Initialize public models table')
-                gr.Markdown('- Filter models using tags or search bar')
-                gr.Markdown('- Select a row to autofill the download link and model name')
-                gr.Markdown('- Click Download')
-
-                with gr.Row():
-                    pub_zip_link = gr.Text(label='Download link to model')
-                    pub_model_name = gr.Text(label='Model name')
-
-                with gr.Row():
-                    download_pub_btn = gr.Button('Download 🌐', variant='primary', scale=19)
-                    pub_dl_output_message = gr.Text(label='Output Message', interactive=False, scale=20)
-
-                filter_tags = gr.CheckboxGroup(value=[], label='Show voice models with tags', choices=[])
-                search_query = gr.Text(label='Search')
-                load_public_models_button = gr.Button(value='Initialize public models table', variant='primary')
-
-                public_models_table = gr.DataFrame(value=[], headers=['Model Name', 'Description', 'Credit', 'URL', 'Tags'], label='Available Public Models', interactive=False)
-                public_models_table.select(pub_dl_autofill, inputs=[public_models_table], outputs=[pub_zip_link, pub_model_name])
-                load_public_models_button.click(load_public_models, outputs=[public_models_table, filter_tags])
-                search_query.change(filter_models, inputs=[filter_tags, search_query], outputs=public_models_table)
-                filter_tags.change(filter_models, inputs=[filter_tags, search_query], outputs=public_models_table)
-                download_pub_btn.click(download_online_model, inputs=[pub_zip_link, pub_model_name], outputs=pub_dl_output_message)
-
+            
         # Upload tab
         with gr.Tab('Upload model'):
             gr.Markdown('## Upload locally trained RVC v2 model and index file')
