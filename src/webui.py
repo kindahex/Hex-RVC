@@ -184,7 +184,7 @@ if __name__ == '__main__':
                 show_yt_link_button = gr.Button('Paste YouTube link/Path to local file instead')
                 song_input_file.upload(process_file_upload, inputs=[song_input_file], outputs=[local_file, song_input])
             with gr.Column():
-                pitch = gr.Slider(-12, 12, value=0, step=1, label='Pitch Change (Vocals ONLY)', info='Generally, use 1 for male to female conversions and -1 for vice-versa. (Octaves)')
+                pitch = gr.Slider(-12, 12, value=0, step=1, label='Pitch Change (Vocals ONLY)', info='Generally, use 12 for male to female conversions and -12 for vice-versa. (Octaves)')
                 pitch_all = gr.Slider(-12, 12, value=0, step=1, label='Overall Pitch Change', info='Changes pitch/key of vocals and instrumentals together. Altering this slightly reduces sound quality. (Semitones)')
             show_file_upload_button.click(swap_visibility, outputs=[file_upload_col, yt_link_col, song_input, local_file])
             show_yt_link_button.click(swap_visibility, outputs=[yt_link_col, file_upload_col, song_input, local_file])
@@ -219,8 +219,8 @@ if __name__ == '__main__':
                 gr.Markdown('### Audio Output Format')
                 output_format = gr.Dropdown(['mp3', 'wav'], value='mp3', label='Output file type', info='mp3: small file size, decent quality. wav: Large file size, best quality')
 
+            ai_cover = gr.Audio(label='AI Cover Output', show_share_button=False)
             with gr.Row():
-                ai_cover = gr.Audio(label='AI Cover Output', show_share_button=False)
                 clear_btn = gr.ClearButton(value='Clear', components=[song_input, rvc_model, keep_files, local_file])
                 generate_btn = gr.Button("Generate", variant='primary')
                 
