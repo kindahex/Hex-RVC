@@ -81,8 +81,8 @@ with gr.Blocks() as app:
                                      choices=["mangio-crepe", "rmvpe", "fcpe", "rmvpe+", "hybrid[fcpe+rmvpe]"], 
                                      value="hybrid[fcpe+rmvpe]")
         with gr.Row():
-            pitch_change = gr.Number(label="Pitch Change", value=0, precision=0)
-            pitch_change_all = gr.Number(label="Pitch Change All", value=0, precision=0)
+          pitch_change = gr.Number(label="Pitch Change", value=0, precision=0)
+          pitch_change_all = gr.Number(label="Pitch Change All", value=0, precision=0)
           with gr.Row():
             index_rate = gr.Slider(label="Index Rate", value=0.5, minimum=0, maximum=1, step=0.01)
             filter_radius = gr.Number(label="Filter Radius", value=3, precision=0)
