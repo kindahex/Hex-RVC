@@ -110,4 +110,4 @@ with gr.Blocks() as app:
     )
 
 # Launch the app
-app.launch()
+app.launch(share=True)
