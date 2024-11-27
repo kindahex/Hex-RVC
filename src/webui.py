@@ -72,7 +72,7 @@ def update_dropdown():
 # Create the Gradio interface
 with gr.Blocks() as app:
     gr.Markdown("# Audio Conversion Tool")
-    rvc_dirname = gr.Dropdown(choices=[], label="Select Folder", interactive=True)        
+    rvc_dirname = gr.Dropdown(choices=[], label="Select Model", interactive=True)        
     refresh_button = gr.Button("Refresh")
     with gr.Tab("Inference"):
         with gr.Row():
@@ -83,7 +83,7 @@ with gr.Blocks() as app:
         with gr.Row():
             pitch_change = gr.Number(label="Pitch Change", value=0, precision=0)
             pitch_change_all = gr.Number(label="Pitch Change All", value=0, precision=0)
-        with gr.Row():
+          with gr.Row():
             index_rate = gr.Slider(label="Index Rate", value=0.5, minimum=0, maximum=1, step=0.01)
             filter_radius = gr.Number(label="Filter Radius", value=3, precision=0)
             crepe_hop_length = gr.Number(label="Crepe Hop Length", value=128, precision=0)
@@ -106,7 +106,7 @@ with gr.Blocks() as app:
     audio_output = gr.Audio(label="Generated Audio")
 
     
-    refresh_button.click(fn=update_dropdown, outputs=folder_dropdown)
+    refresh_button.click(fn=update_dropdown, outputs=rvc_dirname)
     generate_button.click(
         generate_audio, 
         inputs=[song_input, rvc_dirname, pitch_algo, pitch_change, pitch_change_all, index_rate, filter_radius, 
