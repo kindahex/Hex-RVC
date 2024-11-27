@@ -65,7 +65,7 @@ def get_rvc_models():
 
 
 def update_dropdown():
-        return gr.update(choices=get_folders_in_directory())
+        return gr.update(choices=get_rvc_models())
     
 
 
