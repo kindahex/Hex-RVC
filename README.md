@@ -93,33 +93,6 @@ python src/webui.py
 
 
 
-### Download RVC models via WebUI
-
-
-Navigate to the `Download model` tab, and paste the download link to the RVC model and give it a unique name.
-You may search the [AI Hub Discord](https://discord.gg/aihub) where already trained voice models are available for download. You may refer to the examples for how the download link should look like.
-The downloaded zip file should contain the .pth model file and an optional .index file.
-
-Once the 2 input fields are filled in, simply click `Download`! Once the output message says `[NAME] Model successfully downloaded!`, you should be able to use it in the `Generate` tab after clicking the refresh models button!
-
-### Upload RVC models via WebUI
-
-
-For people who have trained RVC v2 models locally and would like to use them for AI Cover generations.
-Navigate to the `Upload model` tab, and follow the instructions.
-Once the output message says `[NAME] Model successfully uploaded!`, you should be able to use it in the `Generate` tab after clicking the refresh models button!
-
-
-### Running the pipeline via WebUI
-
-
-- From the Voice Models dropdown menu, select the voice model to use. Click `Update` if you added the files manually to the [rvc_models](rvc_models) directory to refresh the list.
-- In the song input field, copy and paste the link to any song on YouTube or the full path to a local audio file.
-- Pitch should be set to either -12, 0, or 12 depending on the original vocals and the RVC AI modal. This ensures the voice is not *out of tune*.
-- Other advanced options for Voice conversion and audio mixing can be viewed by clicking the accordion arrow to expand.
-
-Once all Main Options are filled in, click `Generate` and the AI generated cover should appear in a less than a few minutes depending on your GPU.
-
 ## Usage with CLI
 
 ### Manual Download of RVC models
