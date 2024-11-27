@@ -180,23 +180,20 @@ if __name__ == '__main__':
         gr.Label('HEX RVC LITE', show_label=False)
 
         # main tab
+        rvc_model = gr.Dropdown(voice_models, label='Voice Models', info='Models folder "HEX-RVC --> rvc_models". After new models are added into this folder, click the refresh button')
+        ref_btn = gr.Button('Refresh Models', variant='primary')
+
         with gr.Tab("Generate"):
 
-            with gr.Accordion('Main Options'):
-                with gr.Row():
-                    with gr.Column():
-                        rvc_model = gr.Dropdown(voice_models, label='Voice Models', info='Models folder "AICoverGen --> rvc_models". After new models are added into this folder, click the refresh button')
-                        ref_btn = gr.Button('Refresh Models', variant='primary')
+            with gr.Column() as yt_link_col:
+                song_input = gr.Text(label='Song input', info='Link to a song on YouTube or full path to a local file. For file upload, click the button below.')
+                show_file_upload_button = gr.Button('Upload file instead')
 
-                    with gr.Column() as yt_link_col:
-                        song_input = gr.Text(label='Song input', info='Link to a song on YouTube or full path to a local file. For file upload, click the button below.')
-                        show_file_upload_button = gr.Button('Upload file instead')
-
-                    with gr.Column(visible=False) as file_upload_col:
-                        local_file = gr.File(label='Audio file')
-                        song_input_file = gr.UploadButton('Upload', file_types=['audio'], variant='primary')
-                        show_yt_link_button = gr.Button('Paste YouTube link/Path to local file instead')
-                        song_input_file.upload(process_file_upload, inputs=[song_input_file], outputs=[local_file, song_input])
+            with gr.Column(visible=False) as file_upload_col:
+                local_file = gr.File(label='Audio file')
+                song_input_file = gr.UploadButton('Upload', file_types=['audio'], variant='primary')
+                show_yt_link_button = gr.Button('Paste YouTube link/Path to local file instead')
+                song_input_file.upload(process_file_upload, inputs=[song_input_file], outputs=[local_file, song_input])
 
                     with gr.Column():
                         pitch = gr.Slider(-12, 12, value=0, step=1, label='Pitch Change (Vocals ONLY)', info='Generally, use 12 for male to female conversions and -12 for vice-versa. (Octaves)')
