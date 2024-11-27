@@ -82,7 +82,6 @@ Run the following command to download the required MDXNET vocal separation model
 
 ```
 python src/download_models.py
-python src/download_mdx_models.py
 ```
 
 
