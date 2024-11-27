@@ -30,7 +30,6 @@ local-attention
 aria2
 joblib
 numba
-scipy
 llvmlite
 Cython
 tensorboardX
@@ -43,7 +42,7 @@ Pillow
 resampy
 scikit-learn
 Werkzeug
-uc-micro-py>
+uc-micro-py
 sympy
 PyYAML
 pyasn1
