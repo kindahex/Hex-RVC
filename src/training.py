@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 load_dotenv()
-from infer.lib.train.process_ckpt import (
+from train.process_ckpt import (
     change_info,
     extract_small_model,
     merge,
