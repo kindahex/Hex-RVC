@@ -480,6 +480,8 @@ if __name__ == '__main__':
     with open(os.path.join(rvc_models_dir, 'public_models.json'), encoding='utf8') as infile:
         public_models = json.load(infile)
 
+
+
     with gr.Blocks(title='HEX RVC LITE') as app:
 
         gr.Label('HEX RVC LITE', show_label=False)
@@ -628,9 +630,4 @@ if __name__ == '__main__':
                 local_upload_output_message = gr.Text(label='Output Message', interactive=False, scale=20)
                 model_upload_button.click(upload_local_model, inputs=[zip_file, local_model_name], outputs=local_upload_output_message)
 
-    app.launch(
-        share=args.share_enabled,
-        enable_queue=True,
-        server_name=None if not args.listen else (args.listen_host or '0.0.0.0'),
-        server_port=args.listen_port,
-    )
+    app.launch(share=args.share_enabled, enable_queue=True, server_name=None if not args.listen else (args.listen_host or '0.0.0.0'),server_port=args.listen_port)
