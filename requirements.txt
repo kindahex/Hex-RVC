@@ -2,7 +2,7 @@ deemix
 fairseq
 faiss-cpu
 ffmpeg-python
-gradio==3.48.0
+gradio==4.44.0
 lib
 librosa
 numpy
