@@ -13,8 +13,8 @@ import zipfile
 import shutil
 import urllib.request
 import gradio as gr
-from src.main import song_cover_pipeline
-from training import *
+from main import song_cover_pipeline
+from .training import *
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 mdxnet_models_dir = os.path.join(BASE_DIR, 'mdxnet_models')
 rvc_models_dir = os.path.join(BASE_DIR, 'rvc_models')
