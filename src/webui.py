@@ -631,4 +631,4 @@ if __name__ == '__main__':
                 model_upload_button.click(upload_local_model, inputs=[zip_file, local_model_name], outputs=local_upload_output_message)
 
 
-    app.launch(share=args.share_enabled)
+    app.launch(share=True)
