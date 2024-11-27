@@ -167,6 +167,7 @@ def show_hop_slider(pitch_detection_algo):
         ref_btn = gr.Button('Refresh Models', variant='primary')
 
         with gr.Tab("Generate"):
+            gr.Markdown("# you can start inference here.")
             with gr.Column() as yt_link_col:
                 song_input = gr.Text(label='Song input', info='Link to a song on YouTube or full path to a local file. For file upload, click the button below.')
                 show_file_upload_button = gr.Button('Upload file instead')
