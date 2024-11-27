@@ -317,7 +317,7 @@ def song_cover_pipeline(song_input, voice_model, pitch_change, keep_files,
         raise_exception(str(e), is_webui)
 
 
-if __name__ == '__main__':
+
     parser = argparse.ArgumentParser(description='Generate a AI cover song in the song_output/id directory.', add_help=True)
     parser.add_argument('-i', '--song-input', type=str, required=True, help='Link to a YouTube video or the filepath to a local mp3/wav file to create an AI cover of')
     parser.add_argument('-dir', '--rvc-dirname', type=str, required=True, help='Name of the folder in the rvc_models directory containing the RVC model file and optional index file to use')
