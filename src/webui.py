@@ -14,7 +14,7 @@ import shutil
 import urllib.request
 import gradio as gr
 from main import song_cover_pipeline
-from .training import *
+from training import *
 from train_tabs import train
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
