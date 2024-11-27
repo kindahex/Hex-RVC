@@ -236,7 +236,7 @@ if __name__ == '__main__':
                 ai_cover = gr.Audio(label='AI Cover', show_share_button=False)
 
             ref_btn.click(update_models_list, None, outputs=rvc_model)
-            is_webui = gr.Number(value=0, visible=False)
+            is_webui = gr.Number(value=1, visible=False)
             generate_btn.click(song_cover_pipeline,
                                inputs=[song_input, rvc_model, pitch, keep_files, is_webui, main_gain, backup_gain,
                                        inst_gain, index_rate, filter_radius, rms_mix_rate, f0_method, crepe_hop_length,
