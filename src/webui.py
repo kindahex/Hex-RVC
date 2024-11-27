@@ -1,7 +1,7 @@
 import gradio as gr
 import subprocess
 import os
-from src.main import *
+from main import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
