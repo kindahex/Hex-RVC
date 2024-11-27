@@ -15,6 +15,8 @@ import urllib.request
 import gradio as gr
 from main import song_cover_pipeline
 from .training import *
+from training_tabs import train
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 mdxnet_models_dir = os.path.join(BASE_DIR, 'mdxnet_models')
 rvc_models_dir = os.path.join(BASE_DIR, 'rvc_models')
@@ -300,6 +302,9 @@ if __name__ == '__main__':
                 download_pub_btn.click(download_online_model, inputs=[pub_zip_link, pub_model_name], outputs=pub_dl_output_message)
 
         # Upload tab
+        with gr.Tab("Train"):
+            train()
+
         with gr.Tab('Upload model'):
             gr.Markdown('## Upload locally trained RVC v2 model and index file')
             gr.Markdown('- Find model file (weights folder) and optional index file (logs/[name] folder)')
