@@ -2,7 +2,7 @@ import os
 import sys
 from dotenv import load_dotenv
 
-now_dir = os.getcwd()
+now_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(now_dir)
 load_dotenv()
 from train.process_ckpt import (
