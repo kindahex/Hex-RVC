@@ -15,7 +15,7 @@ import urllib.request
 import gradio as gr
 from main import song_cover_pipeline
 from .training import *
-from training_tabs import train
+from train_tabs import train
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 mdxnet_models_dir = os.path.join(BASE_DIR, 'mdxnet_models')
