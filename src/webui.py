@@ -64,6 +64,10 @@ def get_rvc_models():
         return ["Directory does not exist"]
 
 
+def update_dropdown():
+        return gr.update(choices=get_folders_in_directory())
+    
+
 
 # Create the Gradio interface
 with gr.Blocks() as app:
@@ -101,6 +105,8 @@ with gr.Blocks() as app:
     generate_button = gr.Button("Generate")
     audio_output = gr.Audio(label="Generated Audio")
 
+    
+    refresh_button.click(fn=update_dropdown, outputs=folder_dropdown)
     generate_button.click(
         generate_audio, 
         inputs=[song_input, rvc_dirname, pitch_algo, pitch_change, pitch_change_all, index_rate, filter_radius, 
