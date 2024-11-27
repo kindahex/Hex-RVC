@@ -1,9 +1,12 @@
 # HEX RVC (LITE)
 An autonomous pipeline to create covers with any RVC v2 trained AI voice from YouTube videos or a local audio file. For developers who may want to add a singing functionality into their AI assistant/chatbot/vtuber, or for people who want to hear their favourite characters sing their favourite song.
 
-
-
 WebUI is under constant development and testing, but you can try it out right now on both local and colab!
+
+## ToDo
+
+- Training feature
+
 
 ## Changelog
 - new f0 method
