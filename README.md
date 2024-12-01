@@ -3,9 +3,6 @@ An autonomous pipeline to create covers with any RVC v2 trained AI voice from Yo
 
 WebUI is under constant development and testing, but you can try it out right now on both local and colab!
 
-## ToDo
-
-- Training feature
 
 
 ## Changelog
